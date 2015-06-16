@@ -37,10 +37,10 @@ This snippet of JS code needs to be added *before* the Flash/Flex SWF file is em
   * It creates a global variable `_GAtrack` which will hold GA tracking objects
     To track a page view in !JavaScript using this methodology you would use :
 
-    var id = "UA-5-1";
-    _createGAObj(id);
-    _GAtrack[id]._initData();
-    _GAtrack[id]._trackPageview();
+     var id = "UA-5-1";
+     _createGAObj(id);
+     _GAtrack[id]._initData();
+     _GAtrack[id]._trackPageview();
 
 
   To reference `_GAtrack` from within a JS function, you can pre-pend `window.` such as :
