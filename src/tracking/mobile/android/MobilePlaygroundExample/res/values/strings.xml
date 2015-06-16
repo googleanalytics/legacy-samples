@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2011 Google Inc. All Rights Reserved.
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="app_name">MobilePlayground</string>
+    <string name="dispatch">Dispatch</string>
+
+    <!-- Settings -->
+    <string name="settingsTabName">Settings</string>
+    <string name="webPropertyIdLabel">Web Property ID</string>
+    <string name="webPropertyIdHint">UA-xxxxx-yy</string>
+    <string name="anonymizeIpOn">Anonymize IP On</string>
+    <string name="anonymizeIpOff">Anonymize IP Off</string>
+    <string name="autoDispatchOn">Auto Dispatch</string>
+    <string name="autoDispatchOff">Manual Dispatch</string>
+    <string name="dispatchIntervalLabel">Auto dispatch in seconds</string>
+    <string name="dispatchInterval">20</string>
+    <string name="debugOn">Debug On</string>
+    <string name="debugOff">Debug Off</string>
+    <string name="dryRunOn">Dry Run On</string>
+    <string name="dryRunOff">Dry Run Off</string>
+    <string name="stopSession">Stop Session</string>
+    <string name="startSession">Start Session</string>
+    <string name="webPropertyIdWarning">Please set web property ID</string>
+    <string name="dispatchIntervalWarning">Setting dispatch interval to 20</string>
+
+    <!-- Referrer -->
+    <string name="referrerTabName">Referrer</string>
+    <string name="gclidLabel">gclid</string>
+    <string name="gclidHint">Autotagging to Google AdWords</string>
+    <string name="utmCampaignLabel">utm_campaign</string>
+    <string name="utmCampaignHint">Campaign name</string>
+    <string name="utmCampaign">spring_sale</string>
+    <string name="utmMediumLabel">utm_medium</string>
+    <string name="utmMediumHint">Campaign medium</string>
+    <string name="utmMedium">cpc</string>
+    <string name="utmSourceLabel">utm_source</string>
+    <string name="utmSourceHint">Campaign source</string>
+    <string name="utmSource">google</string>
+    <string name="utmTermLabel">utm_term</string>
+    <string name="utmTermHint">Optional campaign term</string>
+    <string name="utmTerm">running+shoes</string>
+    <string name="utmContentLabel">utm_content</string>
+    <string name="utmContentHint">Optional campaign Content</string>
+    <string name="utmContent">logolink</string>
+    <string name="setReferrer">Set Referrer</string>
+    <string name="gclidWarning">Please set gclid value</string>
+    <string name="utmSourceWarning">Please set utm_source</string>
+    <string name="utmMediumWarning">Please set utm_medium</string>
+    <string name="utmCampaignWarning">Please set utm_campaign</string>
+
+    <!-- Pageview -->
+    <string name="pageviewTabName">Pageview</string>
+    <string name="sendPrefix">Send\u0020</string>
+    <string name="homePath">/homeScreen</string>
+    <string name="helpPath">/helpScreen</string>
+    <string name="level1Path">/level1</string>
+    <string name="level2Path">/level2</string>
+    <string name="customPathLabel">Path</string>
+    <string name="pageviewSend">Send Pageview</string>
+    <string name="pathWarning">Please set a path</string>
+
+    <!-- Event -->
+    <string name="eventTabName">Event</string>
+    <string name="videoCategory">Videos</string>
+    <string name="videoPlay">Play</string>
+    <string name="videoPause">Pause</string>
+    <string name="video1">The Wizard of Oz</string>
+    <string name="video2">Gone With the Wind</string>
+    <string name="bookCategory">Books</string>
+    <string name="bookView">View</string>
+    <string name="bookShare">Share</string>
+    <string name="book1">The Fellowship of the Ring</string>
+    <string name="book2">Harry Potter and the Philosopher\'s Stone</string>
+    <string name="customEventLabel">Event</string>
+    <string name="eventCategoryHint">Category</string>
+    <string name="eventActionHint">Action</string>
+    <string name="eventLabelHint">Optional label</string>
+    <string name="eventValueHint">Optional value</string>
+    <string name="eventSend">Send Event</string>
+    <string name="eventCategoryWarning">Please set a category</string>
+    <string name="eventActionWarning">Please set an action</string>
+
+    <!-- Custom Variable -->
+    <string name="customVarTabName">Custom Variable</string>
+    <string name="customVarInfo">Custom variable(s) are sent with the next tracked pageview or
+                                 event.</string>
+    <string name="customVarVisitor">Set Index=1 Gender=Female (Visitor)</string>
+    <string name="customVarVisitorIndex">1</string>
+    <string name="customVarVisitorName">Gender</string>
+    <string name="customVarVisitorValue">Female</string>
+    <string name="customVarSession">Index=2 App=Game (Session)</string>
+    <string name="customVarSessionIndex">2</string>
+    <string name="customVarSessionName">App</string>
+    <string name="customVarSessionValue">Game</string>
+    <string name="customVarPage">Index=3 Level=Quest (Page)</string>
+    <string name="customVarPageIndex">3</string>
+    <string name="customVarPageName">Level</string>
+    <string name="customVarPageValue">Quest</string>
+    <string name="customVarLabel">Custom variable</string>
+    <string name="customVarIndexHint">Index (1-5)</string>
+    <string name="customVarNameHint">Name</string>
+    <string name="customVarValueHint">Value</string>
+    <string name="customVarScopeHint">Optional scope (1-3)</string>
+    <string name="customVarSet">Set Custom Variable</string>
+    <string name="customVarIndexWarning">Please set a valid index (1-5)</string>
+    <string name="customVarNameWarning">Please set a name</string>
+    <string name="customVarValueWarning">Please set a value</string>
+    <string name="customVarScopeWarning">Please set a valid scope (1-3)</string>
+
+    <!-- Ecommerce -->
+    <string name="ecommerceTabName">Ecommerce</string>
+    <string name="storeNameLabel">Store name</string>
+    <string name="storeName">Role Playing Supplier</string>
+    <string name="orderIdLabel">Order ID (Unique to each order)</string>
+    <string name="orderId">O-</string>
+    <string name="itemName">Item name</string>
+    <string name="itemCategory">Item category</string>
+    <string name="itemSku">Item SKU</string>
+    <string name="item1Name">Sword</string>
+    <string name="item1Category">Weapon</string>
+    <string name="item1Sku">W-S-1</string>
+    <string name="item1Quantity">2</string>
+    <string name="item1Price">2.50</string>
+    <string name="item2Name">Wand</string>
+    <string name="item2Category">Weapon</string>
+    <string name="item2Sku">W-M-1</string>
+    <string name="item2Quantity">1</string>
+    <string name="item2Price">3.00</string>
+    <string name="itemTime">X $</string>
+    <string name="itemTotal">= $</string>
+    <string name="itemsTotal">Total = $</string>
+    <string name="totalTaxLabel">Total Tax</string>
+    <string name="totalTax">1.5</string>
+    <string name="shippingCostLabel">Shipping Cost</string>
+    <string name="shippingCost">2.5</string>
+    <string name="ecommerceCancel">Cancel</string>
+    <string name="ecommerceSend">Send</string>
+    <string name="orderIdWarning">Please set an order ID</string>
+    <string name="item1SkuWarning">Please set a SKU for the first item</string>
+    <string name="item2SkuWarning">Please set a SKU for the second item</string>
+</resources>

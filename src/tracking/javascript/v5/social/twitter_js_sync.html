@@ -1,0 +1,73 @@
+<!DOCTYPE>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <title>Social Demo</title>
+  <link href="main.css" rel="stylesheet" type="text/css"></link>
+  <link rel="stylesheet" type="text/css"
+        href="http://fonts.googleapis.com/css?family=Cantarell|Inconsolata">
+
+  <!-- Google Analytics Tracking Code -->
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-12345-6']);
+    _gaq.push(['_trackPageview']);
+
+   (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+
+  <!-- Load Twitter JS-API synchronously -->
+  <script src="//platform.twitter.com/widgets.js" type="text/javascript"></script>
+</head>
+<body>
+  <div class="header">
+    <h1>Google Analytics Social Tracking Demo</h1>
+    <h3>Twitter via JS-SDK sync</h3>
+  </div>
+  <ul id="nav">
+    <li>Other Demos:</li>
+    <li><a href="facebook_js_async.html">Facebook Async</a></li>
+    <li class="item"><a href="facebook_js_sync.html">Facebook Sync</a></li>
+    <li class="item"><a href="twitter_js_async.html">Twitter Async</a></li>
+    <li class="item"><a href="twitter_js_sync.html">Twitter Sync</a></li>
+  </ul>
+
+  <p>This page demonstrates how to track Twitter tweet buttons which are loaded synchronously on the page.<br>
+     See <a href="https://dev.twitter.com/docs/tweet-button">Tweet Button</a> and
+     <a href="https://dev.twitter.com/docs/intents/events">Web Intents Javascript Events</a>
+     on loading the tweet button and detecting user interaction.<br>
+     See the <a href="ga_social_tracking.js">JavaScript Source Code</a> to learn how this is being tracked.</p>
+  <hr>
+
+  <p>Tweet Button - Using the query string to set the url and via properties</p>
+  <div>
+    http://dev.twitter.com
+    <a href="http://twitter.com/share?url=http%3A%2F%2Fdev.twitter.com&amp;via=your_screen_name"
+       class="twitter-share-button">Tweet</a>
+  </div>
+
+  <hr>
+  <p>Tweet Button - Using data attributes</p>
+  <div>
+    http://dev.twitter.com
+    <a href="http://twitter.com/share"
+       data-url="http://dev.twitter.com"
+       data-via="your_screen_name"
+       class="twitter-share-button">Tweet</a>
+  </div>
+
+
+<!-- Google Analytics Social Button Tracking -->
+<script src="ga_social_tracking.js"></script>
+<script>
+  _ga.trackTwitter(); //Google Analytics tracking
+</script>
+
+
+</body>
+</html>

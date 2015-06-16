@@ -1,0 +1,95 @@
+<!DOCTYPE>
+<html>
+<head>
+  <title>Hello Google Analytics API</title>
+  <link rel="stylesheet" type="text/css"
+      href="http://fonts.googleapis.com/css?family=Cantarell|Inconsolata">
+  <link rel="stylesheet" type="text/css"
+      href="css/pretty.css">
+</head>
+<body>
+  <h1>Hello MCF API</h1>
+  <p>This page demonstrates how to query
+    the MCF API version 3 (alpha) using the
+    <a href="https://code.google.com/p/google-api-javascript-client/">
+        Google API Javascript Client Library</a>.</p>
+
+  <p>To learn how this works, read the detailed comments in this
+    <a href="js/main.js">JavaScript source code</a>. Data visualization is done using
+    <a href="http://raphaeljs.com">the Raphaël JavaScript Library</a>.
+    Read this <a href="js/draw.js">JavaScript source code</a>
+    to learn the visualization part.</p>
+
+  <p><b>Note</b>: This demo should only work for profiles that the user has access
+    to, and profiles that have real MCF data.</p>
+
+  <p>To run the demo:</p>
+  <ol>
+    <li>Click the authorize button to grant access to your MCF data.</li>
+    <li>Click the run demo button to start the demo.</li>
+  </ol>
+  <hr>
+
+  <div id="text-input-pane">
+    <table>
+      <tr>
+        <td>
+          <table>
+            <tr>
+              <td>Table ID:</td>
+              <td><input type="text" id="table-id-text-input"></input></td>
+            </tr>
+            <tr>
+              <td>Start Date:</td>
+              <td><input type="text" id="start-date-text-input"></input></td>
+            </tr>
+            <tr>
+              <td>End Date:</td>
+              <td><input type="text" id="end-date-text-input"></input></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <div id="mcf-api-call-details"></div>
+        </td>
+      </tr>
+    </table>
+    <hr>
+  </div>
+
+  <div id="button-pane" style="visibility: hidden">
+    <table>
+      <tr>
+        <td>
+          <button id="authorize-and-run-button" style="visibility: hidden; width: 80px"></button>
+        </td>
+        <td>
+          <table>
+            <tr>
+              <td><input type="checkbox" id="show-row-output-checkbox"/></td>
+              <td>Show each row's information</td>
+              <td><input type="checkbox" id="show-dfs-output-checkbox"/></td>
+              <td>Show DFS information on parsed tree</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <hr>
+  </div>
+
+  <div id="drawingheader"></div>
+  <div id="drawing"></div>
+  <div id="output">Loading, one sec....</div>
+  <div id="row-output"></div>
+  <div id="dfs-output"></div>
+
+  <script src="js/main.js"></script>
+  <script src="js/auth_util.js"></script>
+  <script src="js/draw.js"></script>
+  <script src="js/util.js"></script>
+  <script src="js/raphael.js"></script>
+  <script src="https://apis.google.com/js/client.js?onload=main"></script>
+
+</body>
+</html>

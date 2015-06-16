@@ -1,0 +1,7 @@
+The MobilePlayground iOS application is a demonstration app that makes it
+possible to generate Google Analytics events from an iOS device. To build the
+application, you will need to copy libGoogleAnalytics.a and GANTracker.h to this
+directory, or update the paths of those files in Xcode to point to where you
+have installed those files.
+
+This app is distributed in source form. See COPYING for license information.

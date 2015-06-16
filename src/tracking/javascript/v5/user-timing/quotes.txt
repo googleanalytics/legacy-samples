@@ -1,0 +1,11 @@
+Chuck Norris doesn't write code...oh no, he thinks about the finished product and the code appears.
+Chuck Norris has no need for virtual methods. Nothing can override Chuck Norris.
+Chuck Norris wrote a program that calculated the last digit of pi.
+Chuck Norris can finish an infinite loop in 1.3 seconds.
+Chuck Norris normalizes all schema just by inserting random data
+MVC actually stands for Model-View-ChuckNorris. Controller is just one of his nicknames.
+A synchronize operation doesn't protect against Chuck Norris, if he wants the object, he takes it.
+Chuck Norris invented recursion to see what would happen if he roundhouse kicked himself.
+Chuck Norris can multi-thread on a single processor by breaking it into pieces.
+Chuck Norris' compiler is afraid of displaying warnings to him. It just fixes the code automatically.
+Chuck Norris' first program was kill -9.

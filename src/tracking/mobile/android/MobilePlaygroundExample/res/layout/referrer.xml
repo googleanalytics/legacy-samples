@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2011 Google Inc. All Rights Reserved.
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout android:id="@+id/referrerGroup"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <TextView android:id="@+id/gclidLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gclidLabel" />
+        <EditText android:id="@+id/gclid"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:hint="@string/gclidHint" />
+
+        <Button android:id="@+id/gclidReferrer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/setReferrer" />
+
+        <TextView android:id="@+id/utmCampaignLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/utmCampaignLabel" />
+        <EditText android:id="@+id/utmCampaign"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:hint="@string/utmCampaignHint"
+            android:text="@string/utmCampaign" />
+        <TextView android:id="@+id/utmMediumLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/utmMediumLabel" />
+        <EditText android:id="@+id/utmMedium"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:hint="@string/utmMediumHint"
+            android:text="@string/utmMedium" />
+        <TextView android:id="@+id/utmSourceLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/utmSourceLabel" />
+        <EditText android:id="@+id/utmSource"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:hint="@string/utmSourceHint"
+            android:text="@string/utmSource" />
+        <TextView android:id="@+id/utmTermLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/utmTermLabel" />
+        <EditText android:id="@+id/utmTerm"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:hint="@string/utmTermHint"
+            android:text="@string/utmTerm" />
+        <TextView android:id="@+id/utmContentLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/utmContentLabel" />
+        <EditText android:id="@+id/utmContent"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:hint="@string/utmContentHint"
+            android:text="@string/utmContent" />
+
+        <Button android:id="@+id/utmReferrer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/setReferrer" />
+    </LinearLayout>
+</ScrollView>

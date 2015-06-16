@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!-- Replace placeholder GA API key with a real one. -->
+  <string name="ga_api_key">UA-000000-1</string>
+
+  <bool name="ga_debug">true</bool>
+  <bool name="ga_dryRun">true</bool>
+  <bool name="ga_auto_activity_tracking">true</bool>
+  
+  <!-- We want to see simple, descriptive names in the Google Analytics reports
+       instead of the canonical name for each Activity. -->
+  <string name="com.example.android.notepad.NoteEditor">NoteEditor</string>
+  <string name="com.example.android.notepad.TitleEditor">TitleEditor</string>
+  <string name="com.example.android.notepad.NotesList">ListOfNotes</string>
+</resources>

@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:fb="http://ogp.me/ns/fb#" >
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <title>Social Demo</title>
+  <link href="main.css" rel="stylesheet" type="text/css"></link>
+  <link rel="stylesheet" type="text/css"
+        href="http://fonts.googleapis.com/css?family=Cantarell|Inconsolata">
+
+  <!-- Google Analytics Tracking Code -->
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-12345-6']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+  <!-- Google Analytics Social Button Tracking -->
+  <script src="ga_social_tracking.js"></script>
+
+</head>
+<body>
+
+  <div id="fb-root"></div>
+
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : null, // ENTER your FB App ID
+        //channelUrl : '//WWW.YOUR_DOMAIN.COM/channel.html', // Channel File
+        status     : true, // check login status
+        cookie     : true, // enable cookies to allow the server to access the session
+        xfbml      : true  // parse XFBML
+      });
+
+      _ga.trackFacebook(); //Google Analytics tracking
+
+    };
+
+    // Load the SDK's source Asynchronously
+    (function(d, debug){
+       var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement('script'); js.id = id; js.async = true;
+       js.src = "//connect.facebook.net/en_US/all" + (debug ? "/debug" : "") + ".js";
+       ref.parentNode.insertBefore(js, ref);
+     }(document, /*debug*/ false));
+  </script>
+
+  <div class="header">
+    <h1>Google Analytics Social Tracking Demo</h1>
+    <h3>Facebook via JS-SDK async</h3>
+  </div>
+  <ul id="nav">
+    <li>Other Demos:</li>
+    <li><a href="facebook_js_async.html">Facebook Async</a></li>
+    <li class="item"><a href="facebook_js_sync.html">Facebook Sync</a></li>
+    <li class="item"><a href="twitter_js_async.html">Twitter Async</a></li>
+    <li class="item"><a href="twitter_js_sync.html">Twitter Sync</a></li>
+  </ul>
+
+  <p>This page demonstrates how to track Facebook like buttons which are loaded asynchronously on the page.<br>
+     See <a href="http://developers.facebook.com/docs/reference/javascript/">Facebook developer docs</a>
+     on loading the like button.<br>
+     See the <a href="ga_social_tracking.js">JavaScript Source Code</a> to learn how to this is being tracked.</p>
+
+  <hr>
+  <p>Like this Page! <fb:like></fb:like></p>
+
+  <hr>
+  <ul>
+    <li><a href="http://www.google.com/analytics">
+        http://www.google.com/analytics</a>
+        <fb:like href="http://www.google.com/analytics" send="true" layout="button_count"></fb:like></li>
+
+    <li><a href="http://analytics.blogspot.com/">
+        http://analytics.blogspot.com/</a>
+        <fb:like href="http://analytics.blogspot.com/" send="true" layout="button_count" ></fb:like></li>
+
+    <li><a href="http://code.google.com/apis/analytics">
+        http://code.google.com/apis/analytics</a>
+        <fb:like href="http://code.google.com/apis/analytics" send="true" layout="button_count"></fb:like></li>
+  </ul>
+
+</body>
+</html>

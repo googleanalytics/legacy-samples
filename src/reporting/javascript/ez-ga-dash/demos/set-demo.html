@@ -1,0 +1,140 @@
+<!DOCTYPE>
+<html>
+<head><title>Google Analytics EZ Dashboard Demo</title></head>
+<body>
+  <h1>Google Analytics Easy Dashboard Sample</h1>
+  <p>This is a simple demo for the
+     <a href="http://analytics-api-samples.googlecode.com/svn/trunk/src/reporting/javascript/ez-ga-dash/docs/user-documentation.html">
+       ga-dash library</a>.</p>
+
+  <p>This demo shows how to leverage the <code>set</code> method. Read the comments
+     in the source of this page for details.</p>
+
+  <!--
+  Cool. You made it this far.
+
+  This script demonstrates how to use the set method. The set method is
+  powerful because it allows you to reuse chart configuration objects across
+  multiple charts.
+
+  Go look in the renderChart function below.
+
+  Notice how the tableId parameter is set in a single location.
+
+  Also notice how baseConfig is set into each chart. Then chart specific
+  configurations are set into each respective chart.
+
+  Here's how the script works. First 3 Chart objects
+  are created. Next a base configuration object is created to contain common GA
+  query values for each chart. Then, a configuration object is created for each
+  chart. These chart specific configuration objects only contain specific
+  parameters for the individual charts.
+
+  Once the Draw Charts button is clicked, the table ID value from the form is set
+  into the baseConfig object. The base and chart specific configuration
+  objects are then set into each Chart object. Finally each chart is rendered.
+  -->
+
+  <!-- Display the user interface -->
+  <button id="authorize-button" style="visibility:hidden">Authorize Analytics</button>
+
+  <hr>
+  <p>Enter your Table ID: <input type="text" id="tableId">
+     <button onclick="renderGraph()">Draw Charts</button><br>
+     (Format ga:xxx where xxx is your profile ID)
+  </p>
+  <hr>
+  <div id="ui" style="display:none">
+    <h3>Data Over Time</h3>
+    <div id='dataOverTimeConfig'></div>
+
+    <h3>Totals for each metric</h3>
+    <div id="scorecard"></div>
+
+    <h3>Source and Mediums by Visitor</h3>
+    <div id="sourceMediumTableConfig"></div>
+  <div>
+
+  <!-- Load all libraries and run some JS code -->
+  <script src="https://www.google.com/jsapi"></script>
+  <script src="../gadash-1.0.js"></script>
+  <script src="https://apis.google.com/js/client.js?onload=gadashInit"></script>
+  <script>
+  gadash.configKeys({
+    'apiKey': 'AIzaSyAPusS7gzp0bTla1ogGW_hJOwamaBwVT5Q',
+    'clientId':'821751250764.apps.googleusercontent.com'
+  });
+
+
+  // Create new Chart.
+  var dataOverTime = new gadash.Chart();
+  var scoreCard = new gadash.Chart();
+  var sourceMediumTable = new gadash.Chart();
+
+
+  // Base chart configuration. Used for all charts.
+  var baseConfig = {
+    'last-n-days': 30,
+    'query': {
+      'metrics': 'ga:visitors, ga:visits, ga:pageviews',
+    },
+    'chartOptions': {
+      width: 700
+    }
+  };
+
+
+  // Configuration for data over time graph.
+  var dataOverTimeConfig = {
+    'divContainer': 'dataOverTimeConfig',
+    'type': 'LineChart',
+    'query': {
+      'dimensions': 'ga:date',
+      'sort': 'ga:date'
+    },
+    'chartOptions': {
+      height: 300,
+      legend: {position: 'bottom'},
+      hAxis: {title:'Date'},
+      curveType: 'function'
+    }
+  };
+
+
+  // Configuration for totals for each metric.
+  var scoreCardConfig = {
+    'divContainer': 'scorecard',
+  };
+
+
+  // Configuration for source medium table.
+  var sourceMediumTableConfig = {
+    'divContainer': 'sourceMediumTableConfig',
+    'query': {
+      'dimensions': 'ga:source,ga:medium',
+      'sort': '-ga:visitors',
+      'max-results': 100
+    }
+  };
+
+
+  /**
+   * Handler for the run demo button.
+   * Uses the table ID in the form to update the baseConfig object. Then
+   * sets baseConfig into each of the charts. Then each chart's specific
+   * configuration parameters are set. Finally all are rendered.
+   */
+  function renderGraph() {
+     // Add the table id to the base configuration object.
+     baseConfig.query.ids = document.getElementById('tableId').value;
+
+     dataOverTime.set(baseConfig).set(dataOverTimeConfig).render();
+     scoreCard.set(baseConfig).set(scoreCardConfig).render();
+     sourceMediumTable.set(baseConfig).set(sourceMediumTableConfig).render();
+
+     // Display UI.
+     document.getElementById('ui').style.display = 'block';
+   }
+  </script>
+</body>
+</html>

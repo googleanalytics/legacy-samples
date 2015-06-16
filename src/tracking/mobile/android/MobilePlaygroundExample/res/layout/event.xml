@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2011 Google Inc. All Rights Reserved.
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout android:id="@+id/eventGroup"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <TextView android:id="@+id/video1Label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/video1" />
+        <Button android:id="@+id/video1Play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/videoPlay" />
+        <Button android:id="@+id/video1Pause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/videoPause" />
+
+        <TextView android:id="@+id/video2Label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/video2" />
+        <Button android:id="@+id/video2Play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/videoPlay" />
+        <Button android:id="@+id/video2Pause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/videoPause" />
+
+        <TextView android:id="@+id/book1Label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/book1" />
+        <Button android:id="@+id/book1View"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bookView" />
+        <Button android:id="@+id/book1Share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bookShare" />
+
+        <TextView android:id="@+id/book2Label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/book2" />
+        <Button android:id="@+id/book2View"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bookView" />
+        <Button android:id="@+id/book2Share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bookShare" />
+
+        <TextView android:id="@+id/customEventLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/customEventLabel" />
+        <EditText android:id="@+id/eventCategory"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:hint="@string/eventCategoryHint" />
+        <EditText android:id="@+id/eventAction"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:hint="@string/eventActionHint" />
+        <EditText android:id="@+id/eventLabel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:hint="@string/eventLabelHint" />
+        <!-- TODO(aihawkins): Enforce that negative number is not okay -->
+        <EditText android:id="@+id/eventValue"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:numeric="integer"
+            android:singleLine="true"
+            android:hint="@string/eventValueHint" />
+        <Button android:id="@+id/eventSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/eventSend" />
+
+        <Button android:id="@+id/eventDispatch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dispatch" />
+    </LinearLayout>
+</ScrollView>

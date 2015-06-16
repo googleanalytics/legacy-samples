@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2011 Google Inc. All Rights Reserved.
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <TextView android:id="@+id/storeNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/storeNameLabel" />
+        <EditText android:id="@+id/storeName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="@string/storeName" />
+
+        <TextView android:id="@+id/orderIdLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/orderIdLabel" />
+        <EditText android:id="@+id/orderId"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true" />
+
+        <EditText android:id="@+id/item1Name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:hint="@string/itemName"
+            android:text="@string/item1Name" />
+        <EditText android:id="@+id/item1Category"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:hint="@string/itemCategory"
+            android:text="@string/item1Category" />
+        <EditText android:id="@+id/item1Sku"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:hint="@string/itemSku"
+            android:text="@string/item1Sku" />
+        <EditText android:id="@+id/item1Quantity"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:numeric="integer"
+            android:singleLine="true"
+            android:text="@string/item1Quantity" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/itemTime" />
+        <EditText android:id="@+id/item1Price"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:numeric="decimal"
+            android:singleLine="true"
+            android:text="@string/item1Price" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/itemTotal" />
+        <TextView android:id="@+id/item1Total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText android:id="@+id/item2Name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:hint="@string/itemName"
+            android:text="@string/item2Name" />
+        <EditText android:id="@+id/item2Category"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:hint="@string/itemCategory"
+            android:text="@string/item2Category" />
+        <EditText android:id="@+id/item2Sku"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:hint="@string/itemSku"
+            android:text="@string/item2Sku" />
+        <EditText android:id="@+id/item2Quantity"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:numeric="integer"
+            android:singleLine="true"
+            android:text="@string/item2Quantity" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/itemTime" />
+        <EditText android:id="@+id/item2Price"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:numeric="decimal"
+            android:singleLine="true"
+            android:text="@string/item2Price" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/itemTotal" />
+        <TextView android:id="@+id/item2Total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/itemsTotal" />
+        <TextView android:id="@+id/itemTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView android:id="@+id/totalTaxLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/totalTaxLabel" />
+        <EditText android:id="@+id/totalTax"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:numeric="integer"
+            android:singleLine="true"
+            android:text="@string/totalTax" />
+
+        <TextView android:id="@+id/shippingCostLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/shippingCostLabel" />
+        <EditText android:id="@+id/shippingCost"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:numeric="integer"
+            android:singleLine="true"
+            android:text="@string/shippingCost" />
+
+        <Button android:id="@+id/ecommerceSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ecommerceSend" />
+        <Button android:id="@+id/ecommerceCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ecommerceCancel" />
+
+        <Button android:id="@+id/ecommerceDispatch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dispatch" />
+    </LinearLayout>
+</ScrollView>

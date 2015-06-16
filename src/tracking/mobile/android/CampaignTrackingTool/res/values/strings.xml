@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Google Play Campaign Tracking Tool</string>
+    <string name="marketUrlHint">Enter query string</string>
+    <string name="submitButtonTitle">Send</string>
+    <string name="broadcastSentMsg">INSTALL_REFERRER intent was
+        broadcast. See Analytics LogCat output for more details.</string>
+    <string name="errorNoInput">Input error: No query string provided. Please
+         provide a valid query string.</string>
+    <string name="errorMissingReferrerParam"><b>[Error]</b> referral parameter must be
+         present in destination URL</string>
+    <string name="errorPackageMismatch"><b>[Error]</b> value of id parameter in URL
+         must match given package name</string>
+    <string name="errorNoComponent"><b>[Error]</b> intent was not broadcast because
+         no component was specified. Query string must specify component
+         via an ID parameter.</string>
+    <string name="autoTaggingBoxLabel">Test AdWords auto-tagging</string>
+    <string name="queryStringTitleText">https://play.google.com/store/apps/details?</string>
+    <string name="autoTaggingEnabled">Auto-tagging enabled, test gclid
+        value added to referrer."</string>
+    <string name="errorNotEncoded"><b>[Warning]</b> referrer parameter does not 
+        appear to be encoded. Referrer parameter should be encoded.</string>
+    <string name="warningFloatingTags"><b>[Warning]</b> utm tag(s) were found outside
+        the referrer parameter. These tag(s) should be stored as encoded values
+        inside the referrer parameter:</string>
+    <string name="warningNoReferrer"><b>[Warning]</b> no referrer parameter found
+        in query string.  If using UTM tags, they should be encoded and inside
+        the referrer parameter.</string>
+    <string name="errorNoParams"><b>[Error]</b> could not read parameters
+        from query string. Query string should contain at least an \'id\'
+        parameter. Please make sure query string is well-formed.</string>
+    <string name="errorNoId"><b>[Error]</b> no ID parameter found in 
+        query string. Id parameter is required. Stopping broadcast.</string>
+
+</resources>

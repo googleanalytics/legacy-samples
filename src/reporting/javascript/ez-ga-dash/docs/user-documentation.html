@@ -1,0 +1,621 @@
+<!DOCTYPE>
+<html>
+<head>
+  <title>Google Analytics Easy Dashboard Javascript Library</title>
+  <link href='http://fonts.googleapis.com/css?family=Cantarell' rel='stylesheet' type='text/css'>
+  <style>
+    body {
+      font-family: Helvetica, sans-serif, arial;
+      margin: 0 20px;
+    }
+    h1, h2, h3 {
+      margin-top: 20px;
+      font-family: 'Cantarell', arial, serif;
+    }
+    h1 {
+      background-color: #000080;
+      color: #FFA500;
+      margin-top: 0;
+      margin: 0 -20px;
+      padding: 20px 0 10px 20px;
+      border-bottom: 1px solid #FF5000;
+    }
+    tr, td, th {
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+    th {
+      background-color: #ccc;
+    }
+    .example {
+      border: 2px black solid;
+      padding: 10px;
+    }
+    .note {
+      padding: 5px 12px;
+      border-style: solid none solid none;
+      border-color: #000080;
+      border-width: 1px;
+      background-color: #eee;
+    }
+    img {
+      border: 1px solid #CCC;
+    }
+    code {
+      color: green;
+    }
+    #gu {
+      text-align: right;
+      padding-right: 10px;
+    }
+    .row {
+      overflow: hidden;
+      zoom: 1;
+    }
+    .toc {
+      width: 275px;
+    }
+    .toc > li {
+      list-style-type: none;
+    }
+    .left {
+      float: left;
+    }
+    li {
+      padding: 3px 0;
+    }
+    pre.prettyprint {
+      width: 650px;
+      padding: 10px !important;
+    }
+  </style>
+  <link href="prettify.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="prettify.js"></script>
+</head>
+<body onload="prettyPrint()">
+<h1>Google Analytics Easy Dashboard Javascript Library</h1>
+<p>This document describes how to use the
+   <a href="../gadash-1.0.js">ga-ez-dash library</a> version 1.0.</p>
+
+<h2>Table of Contents</h2>
+<div class="row">
+  <ul class="toc left">
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#started">Getting Started</a>
+      <ol>
+        <li><a href="#register">Register</a></li>
+        <li><a href="#copypaste">Copy &amp; Paste</a></li>
+        <li><a href="#configure">Configure</a></li>
+      </ol>
+    </li>
+    <li><br><a href="../demos/set-demo.html">Cool demo!</a></li>
+  </ul>
+  <ul class="toc left">
+    <li><a href="#method">Chart Method Reference</a></li>
+    <li><a href="#reference">Configuration Parameter Reference</a></li>
+    <li><a href="#changelog">Changelog</a></li>
+  </ul>
+</div>
+
+<h2 id="overview">Overview</h2>
+<p>This library is designed to create an easy way to build a custom
+   Google Analytics Dashboard on your own page. The library is built on
+   top of the Google Analytics
+   <a href="http://code.google.com/apis/analytics/docs/gdata/v3/gdataGettingStarted.html">
+      Core Reporting</a> and
+   <a href="http://code.google.com/apis/chart/interactive/docs/">
+      Chart Tools APIs</a>
+   and does all the
+   heavy lifting of handling authorization, issuing queries,
+   and transforming the results into pretty visualizations.</p>
+
+<p class="note"><strong>Note</strong>: At this time, each user who views a dashboard
+   must have access to the Google Analytics account from which the dashboard
+   data is generated. Currently you can not create a dashboard for users who do not
+   have access to your Google Analytics data.</p>
+
+
+<h2 id="started">Getting Started</h2>
+<p>We tried to make this library very easy to use. To get started you need
+   to perform the following 3 steps:</p>
+<ol>
+  <li><a href="#register">Register for a developer key</a></li>
+  <li><a href="#copypaste">Copy &amp; Paste the code to a web page</a></li>
+  <li><a href="#configure">Configure the chart</a></li>
+</ol>
+
+<h2 id="register">Register</h2>
+<p>All applications that use the Google Analytics API must be registered
+   through the <a href="https://code.google.com/apis/console">
+   Google APIs Console</a>. When you register in the console, you will create
+   a new project and configure the settings to work with this library. Once
+   configured, the console will provide you with a few values that you need
+   in the configuration step. Here's exactly what you need to do:</p>
+
+<ol>
+  <li>Go to the <a href="https://code.google.com/apis/console">
+      Google APIs Console</a></li>
+  <li>Navigate to the left panel to <code>Services -> Analytics API</code></li>
+  <li>And switch service to <strong>ON</strong></li>
+</ol>
+
+<p>Next you will need to configure this project to use OAuth 2.0 authentication.
+   Just like you need to login to your Google Analytics account to view your
+   data, you will need to authorize this dashboard application to view your data.
+   Authorization is handled through the OAuth2.0 protocol.</p>
+
+<p>This dashboard library implements most of the OAuth functionality.
+   As a user, all you need to do is configure your project in the APIs to use
+   OAuth2.0, then use the <code>Client ID</code> and <code>API Key</code>
+   provided in the console as parameters when you configure the library.</p>
+
+<h3>Getting your Client ID and API Key</h3>
+<p>In the Google APIs Console, for the project you just created:</p>
+<ol>
+  <li>Navigate on the left panel to <code>API Access</code></li>
+  <li>Click the big blue <code>Create An OAuth 2.0 Client ID</code> button<br><br>
+      <img width="400px" src="images/oAuth.gif"
+           alt="Create OAuth 2.0 button in google apis console"><br><br></li>
+  <li>Add a cool product name and logo, then click <code>Next</code></li>
+  <li>Under:
+    <ul>
+      <li>Application Type &ndash; select <code>Web Application</code></li>
+      <li>Your site or hostname &ndash; add the domain name or host name from
+          where this script will be served.</li>
+    </ul>
+  </li>
+  <li>Click <code>Create Client ID</code></li>
+</ol>
+
+<p class="note"><strong>Note</strong>: This dashboard library will only work if the script the page
+   is on is hosted from a web server. The domain (hostname) of the web server must match
+   the values in the JavaScript origins field. This library will not work if it is hosted
+   from a file.</p>
+
+<p>Once complete, your project should have values where the red arrows are in this image.</p>
+<img src="images/apiclientid.gif"
+     width="80%"
+     alt="image of Google APIs Cosole APIs access page pointing out Client ID and API Key locations">
+
+<p>Copy or write down the <code>Client ID</code> and <code>API Key</code> values. You will
+   use both later in the configuration stage.</p>
+
+<h2 id="copypaste"></h2>
+<p>Once compete, time to copy and paste the code to a page.</p>
+<ol>
+  <li>Copy the library and save to your server</li>
+  <li>Fire up your favorite text / html editor</li>
+  <li>Copy and paste the following code into a blank page</li>
+</ol>
+
+<pre class="prettyprint lang-html">
+&lt;!DOCTYPE&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;GA Dash Demo&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;!-- Add Google Analytics authorization button --&gt;
+  &lt;button id="authorize-button" style="visibility: hidden"&gt;
+        Authorize Analytics&lt;/button&gt;
+
+  &lt;!-- Div element where the Line Chart will be placed --&gt;
+  &lt;div id='line-chart-example'&gt;&lt;/div&gt;
+
+  &lt;!-- Load all Google JS libraries --&gt;
+  &lt;script src="https://www.google.com/jsapi"&gt;&lt;/script&gt;
+  &lt;script src="gadash-1.0.js"&gt;&lt;/script&gt;
+  &lt;script src="https://apis.google.com/js/client.js?onload=gadashInit"&gt;&lt;/script&gt;
+  &lt;script&gt;
+    // Configure these parameters before you start.
+    var API_KEY = 'Enter Your API Key Here';
+    var CLIENT_ID = 'Enter Your Client ID Here';
+    var TABLE_ID = 'Enter your Table ID here';
+    // Format of table ID is ga:xxx where xxx is the profile ID.
+
+    gadash.configKeys({
+      'apiKey': API_KEY,
+      'clientId': CLIENT_ID
+    });
+
+    // Create a new Chart that queries visitors for the last 30 days and plots
+    // visualizes in a line chart.
+    var chart1 = new gadash.Chart({
+      'type': 'LineChart',
+      'divContainer': 'line-chart-example',
+      'last-n-days':30,
+      'query': {
+        'ids': TABLE_ID,
+        'metrics': 'ga:visitors',
+        'dimensions': 'ga:date'
+      },
+      'chartOptions': {
+        height:600,
+        title: 'Visits in January 2011',
+        hAxis: {title:'Date'},
+        vAxis: {title:'Visits'},
+        curveType: 'function'
+      }
+    }).render();
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<p>Once complete, save this file to your server.</p>
+
+<h2 id="configure">Configure</h2>
+<p>Once you've copied and pasted the code, you just need to configure the chart
+   to work with your data.</p>
+<p>Replace the <code>API_KEY</code> and <code>CLIENT_ID</code> values with the
+   respective API Key and Client ID that you created in the Google APIs console
+   during the first step.</p>
+
+<p>Replace the <code>TABLE_ID</code> parameter with <code>ga:</code> + your
+   profile ID. Finding your profile ID is easy. Just log into Google Analytics
+   and navigate to the profile you want to use. After logging in, there will be
+   a profile ID at the end of the URL in the address bar after the 'p'. This is
+   your profile ID. Example: p'XXXX'.</p>
+<img src="images/pID.gif"
+     alt="URL of a Google Analytics. The last p query parameter has the profile ID.">
+
+<p>Use <code>ga:</code> + your profile ID to get your Table ID. So if your
+   profile ID was <code>8325</code>, your table id would be <code>ga:8325</code>.</p>
+
+<p>Save the file. You're done!</p>
+
+<h2>Usage</h2>
+
+<p>Navigate your browser to the URL this script is hosted on. The script will:</p>
+<ol>
+  <li>Display a button asking for you to authorize</li>
+  <li>Click the button. You will be prompted to login and authorize access</li>
+  <li>Once complete, the script will retrieve visitors over the past 30 days,
+      and display the data in a pretty line chart</li>
+</ol>
+
+<p>Great Success!</p>
+
+<h2 id="method">Chart Method Reference</h2>
+<p>Chart objects support 3 methods.</p>
+
+
+<dl>
+<dt><h3><code>new gadash.Chart(opt_config)</code></h3></dt>
+<dd>
+<p>To create a new chart you use the constructor:</p>
+<pre class="prettyprint">
+var myChart = new gadash.Chart();
+</pre>
+<p>The constructor also accepts an optional configuration object as a parameter:</p>
+<pre class="prettyprint">
+var myChart = new gadash.Chart({
+  'query': {
+    'ids': 'ga:1234',
+    'start-date': '2012-01-01',
+    'end-date': '2012-01-15',
+    'metrics': 'ga:vists'
+  }
+});
+</pre>
+<p>A deep copy of the object passed into the constructor is made, then
+   stored in the chart object. This allows the original object to be modified
+   without effecting the values stored in the chart.</p>
+</dd>
+</dl>
+
+<dl>
+<dt><h3><code>set(config)</code></h3></dt>
+<dd>
+<p>Sets a configuration object in the chart:</p>
+<pre class="prettyprint">
+myChart.set({
+  'divContainer': 'chart1'
+});
+</pre>
+<p>This method performs a deep copy of the object being passed into the method. So in the following example:</p>
+<pre class="prettyprint">
+var config = {'divContainer': 'chart1'};
+myChart.set(config);
+config.divContainer = 'chart2';
+</pre>
+<p>The value of <code>divContainer</code> in <code>myChart</code> will be <code>chart1</code>.</p>
+<p>The <code>set</code> method also extends keys that contain objects as values. So in the example:</p>
+<pre class="prettyprint">
+var dimensions = {
+  'query': {
+    'dimensions': 'ga:source,ga:medium'
+  }
+};
+
+var metrics = {
+  'query': {
+    'metrics': 'ga:visits,ga:pageviews'
+  }
+};
+
+myChart.set(dimensions).set(metrics);
+</pre>
+<p>The first <code>set</code> stores the query in the chart. Because <code>query</code> is
+   an object, the second set adds the metrics to the query object.
+   (as opposed to overwriting the original query object.)</p>
+
+</dd>
+</dl>
+
+<dl>
+<dt><h3><code>render()</code></h3></dt>
+<dd>
+<p>Renders this chart by executing the API query, handing the response, converting the
+   GA API response into a Google Visualization data table, getting a new visualization
+   object, and finally drawing the visualization on the page.</p>
+<pre class="prettyprint">
+chart1.render();
+</pre>
+</dd>
+</dl>
+
+<p class="note"><strong>Note</strong>: Each of these methods return an instance to the chart object.
+   This allows you to chain methods. For example: <code>myChart.set(conig1).set(config2).render()</code></p>
+
+
+<h2 id="reference">Configuration Parameter Reference</h2>
+<p>You can now continue configuring this chart to query for different data,
+   or to display the data in other Google Visualizations. All configurations are done
+   through the configuration object you pass into the Chart constructor. Use the
+   following table to see how the various chart options work.</p>
+
+<table cellspacing="0">
+  <tr>
+    <th>
+      <strong>Name</strong>
+    </th>
+    <th>
+      <strong>Type</strong>
+    </th>
+    <th>
+      <strong>Description</strong>
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <code>type</code><br>
+      <br>
+      <strong>Required</strong>
+    </td>
+    <td>
+      String
+    </td>
+    <td>
+      <p>
+        Specifies which type of chart instance to use from the Google
+        Visualization's library. To use a chart, specify the object name
+        of the chart from the visualization library. You can use any
+        available chart the visualization library offers but these are
+        the valid charts that have been tested:
+      </p>
+      <p>
+        <code>'LineChart'</code><br>
+        <code>'BarChart'</code><br>
+        <code>'ColumnChart'</code><br>
+        <code>'PieChart'</code><br>
+        <code>'Table'</code>
+      </p>
+      <p>
+        <strong>Note</strong>: If <code>type</code> is not declared, then the default chart is a <code>'Table'</code>.
+      </p>
+      <p>
+        <strong>Example:</strong> The following will declare a Line Chart from the Google Visualization library.
+      </p>
+<pre class="prettyprint">
+'type': 'LineChart'
+</pre>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>divContainer</code><br>
+      <br>
+      <strong>Required</strong>
+    </td>
+    <td>
+      String
+    </td>
+    <td>
+      Specifies which div element to display the chart in.<br>
+      <br>
+      <strong>Example:</strong> This example will draw the chart to <code>&lt;div id='chart1'&gt;&lt;/div&gt;</code><br>
+      <br>
+<pre class="prettyprint">
+'divContainer': 'chart1'
+</pre>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>query</code><br>
+      <br>
+      <strong>Required</strong>
+    </td>
+    <td>
+      Object
+    </td>
+    <td>
+      <p>
+        Object that specifies a query object for Google Analytics Core Reporting a API. The query object must contain following parameters: <code>ids, start-date, end-date, metrics</code>. The following parameters are optional: <code>dimensions, filters, max-results, segment, sort, start-index, fields</code>
+      </p>
+      <p>
+        <strong>Note:</strong> If <code>last-n-days</code> is declared in the config, then <code>start-date</code> and <code>end-date</code> are not required parameters of the query option because they will be already declared.
+      </p>
+      <p>
+        <code>start-date</code> and <code>end-date</code> must be a String of in the form yyyy-MM-dd
+      </p>
+      <p>
+        For a list of all valid <code>metrics</code> and <code>dimensions</code>, see the <a href="http://code.google.com/apis/analytics/docs/gdata/dimsmets/dimsmets.html">Dimensions &amp; Metrics Reference</a>
+      </p>
+      <p>
+        For more detailed information about the <code>query</code> object and supported parameters, see <a href="http://code.google.com/apis/analytics/docs/gdata/v3/reference.html#q_summary">Core Reporting API Reference Guide</a>
+      </p>
+      <p>
+        <strong>Example:</strong> The following query will return the number of visitors for each day from January 1, 2000 to January 31, 2000
+      </p>
+<pre class="prettyprint">
+query: {
+  'ids':'ga:1234',
+  'metrics': 'ga:visitors',
+  'start-date':'2000-01-01',
+  'end-date':'2000-01-30',
+  'dimensions': 'ga:date'
+}
+</pre>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>chartOptions</code><br>
+      <br>
+      Optional
+    </td>
+    <td>
+      Object
+    </td>
+    <td>
+      <p>
+        Object that specifies chart options configuation parameters. This object must be configured based on the <code>type</code> parameter that was passed.
+      </p>
+      <p>
+        <code>'type':'LineChart'</code> refer to <a href="http://code.google.com/apis/chart/interactive/docs/gallery/linechart.html#Configuration_Options">Line Chart Configurations</a><br>
+        <code>'type':'BarChart'</code> refer to <a href="http://code.google.com/apis/chart/interactive/docs/gallery/barchart.html#Configuration_Options">Bar Chart Configurations</a><br>
+        <code>'type':'ColumnChart'</code> refer to <a href="http://code.google.com/apis/chart/interactive/docs/gallery/columnchart.html#Configuration_Options">Column Chart Configurations</a><br>
+        <code>'type':'PieChart'</code> refer to <a href="http://code.google.com/apis/chart/interactive/docs/gallery/piechart.html#Configuration_Options">Pie Chart Configurations</a><br>
+        <code>'type':'Table'</code> refer to <a href="http://code.google.com/apis/chart/interactive/docs/gallery/table.html#Configuration_Options">Table Configurations</a><br>
+      </p>
+      <p>
+        <strong>Example:</strong> This example is to configure the chart options of a <code>LineChart</code>. Sets the div's height of the line chart to 600, the title of the chart to "Visits in January 2011", the x-axis label to "Date", and the y-axis label to "Visits"
+      </p>
+<pre class="prettyprint">
+chartOptions: {
+  height:600,
+  title: 'Visits in January 2011',
+  hAxis: {title:'Date'},
+  vAxis: {title:'Visits'},
+  curveType: 'function'
+}
+</pre>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>last-n-days</code><br>
+      <br>
+      Optional
+    </td>
+    <td>
+      Number
+    </td>
+    <td>
+      <p>
+        Sets the <code>query</code> parameters <code>start-date</code> and <code>end-date</code> to query data from the last n days passed to it.
+      </p>
+      <p>
+        <strong>Note:</strong> This parameter will always override the <code>start-date</code> and <code>end-date</code> of the <code>query</code> object.
+      </p>
+      <p>
+        <strong>Example:</strong> This will query Google Analytics data from the last 30 days.
+      </p>
+<pre class="prettyprint">
+'last-n-days': 30
+</pre>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>onSuccess</code><br>
+      <br>
+      Optional
+    </td>
+    <td>
+      Function
+    </td>
+    <td>
+      Allows a user to define their own callback function after the query is
+      executed. It gives users the ability to use their own chart APIs and
+      flexibility with Analytics data. This function takes in a Google Analytics
+      JSON response object. For information about the response object, see
+      <a href="http://code.google.com/apis/explorer/#_s=analytics&amp;_v=v3&amp;_m=data.ga.get">
+        Google Analytics API Console</a>
+      <p>
+        <strong>Example:</strong> This is an example of a custom callback that gets total
+        visitors from the GA response then continues to render the chart and use the default callback.
+      </p>
+      <pre class="prettyprint">
+&lt;-- HTML snippet to update --&gt;
+&lt;p&gt;Total visits = &lt;span id="totalVisits"&gt;&lt;/span&gt;.&lt;/p&gt;
+</pre>
+
+<pre class="prettyprint">
+// callback defined in configuration object.
+'onSuccess': function(response) {
+  var totalVisits = response.totalsForAllResults['ga:visits'];
+
+  // Update UI.
+  document.getElementById('totalVisits').innerHTML = totalVisits;
+
+  // Continue rendering the chart as normal.
+  // Note: this points to the instance of the Chart object from which the
+  //       onSuccess function is called.
+  this.defaultOnSuccess(response);
+}
+</pre>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>onError</code><br>
+      <br>
+      Optional
+    </td>
+    <td>
+      Function
+    </td>
+    <td>
+      <p>
+        Allows user to handle errors by creating their own error function. The function takes in a String with the message.
+      </p>
+      <p>
+        <strong>Example:</strong> Will print the error message in an alert window instead of a div on the HTML page.
+      </p>
+      <pre class="prettyprint">
+'onError': function(message) {
+  alert(message);
+}
+</pre>
+    </td>
+  </tr>
+</table>
+
+
+<h2 id="changelog">Changelog</h2>
+<h3>May 14, 2012</h3>
+<ul>
+  <li>Fixed loading bug</li>
+  <li>Fixed bug preventing currencies from being reported</li>
+  <li>Fixed bug preventing bar and column charts</li>
+</ul>
+
+
+<h3>April 10, 2012</h3>
+<ul>
+  <li>Library uploaded</li>
+</ul>
+
+
+<br><br><br><br>
+<p id="gu">G-Unit</p>
+</body>
+</html>

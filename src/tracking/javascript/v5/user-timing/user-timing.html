@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <title>Site Speed User Timing Demo</title>
+  <link href="main.css" rel="stylesheet" type="text/css"></link>
+  <link rel="stylesheet" type="text/css"
+        href="http://fonts.googleapis.com/css?family=Cantarell|Inconsolata">
+</head>
+<body>
+  <h1 class="header">Site Speed User Timing Demo</h1>
+  <p>This page demonstrates 2 ways to use the Google Analytics
+     <code>_trackTiming</code> feature to track the time it takes to load resources asynchronously:</p>
+  <ul>
+    <li>Demo 1 &ndash; Uses a DOM script element to load the JQuery library
+        from both Microsoft and Google Content delivery networks.</li>
+    <li>Demo 2 &ndash; Uses a XMLHttpRequest object to load a text file
+        containing Chuck Norris quotes.</li>
+  </ul>
+  <p>Checkout the <a href="user-timing.js">JavaScript source code</a>
+     to understand how each demo is implemented.<br>
+     Use your browser's developer tools to see the JavaScript send <code>__utm.gif</code> requests to
+     Google Analytics.<br>
+     For more details on tracking time in Google Analytics, read the
+     <a href="http://developers.google.com/analytics/devguides/collection/gajs/gaTrackingTiming">
+        Site Speed User Timing developer guide</a>.</p>
+
+  <hr>
+  <h2>Demo 1 - Dom Script Element</h2>
+  <p>Click the button to asynchronously load the jQuery library from both
+     Google and Microsoft content delivery networks.</p>
+  <p><button onclick="runDemo1()">Load jQuery</button></p>
+  <div id="demo1Time"></div>
+
+  <hr>
+  <h2>Demo 2 - Ajax Request via XMLHttpRequest</h2>
+  <p>Click the button to load a .txt file with Chuck Norris quotes.</p>
+  <p><button onclick="runDemo2()">Do IT!</button></p>
+  <p id="demo2Time"></p>
+  <pre id="xhrOutput"></pre>
+
+
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-XXXXX-X']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<script src="user-timing.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+The MobilePlayground Android application is a demonstration app that makes it
+possible to generate Google Analytics events from an Android device. To build
+the application, you will need to copy libGoogleAnalytics.jar from the SDK.
+
+This app is distributed in source form. See COPYING for license information.

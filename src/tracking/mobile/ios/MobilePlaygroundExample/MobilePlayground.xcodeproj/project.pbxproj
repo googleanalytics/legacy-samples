@@ -1,0 +1,340 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		110B51001458D38A0038033B /* CustomVariablesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 110B50FE1458D38A0038033B /* CustomVariablesViewController.m */; };
+		110B510A1458D4040038033B /* CustomVariablesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110B51091458D4040038033B /* CustomVariablesView.xib */; };
+		1117903D14464C780016DBDD /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1117903C14464C780016DBDD /* libsqlite3.0.dylib */; };
+		1117904214464C8D0016DBDD /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1117904114464C8D0016DBDD /* CFNetwork.framework */; };
+		1140B8A11448D5DC000CCD6C /* PageViewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1140B8A01448D5DC000CCD6C /* PageViewView.xib */; };
+		1140B8A71448D74F000CCD6C /* UIUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1140B8A61448D74F000CCD6C /* UIUtil.m */; };
+		1148622B1450A1830081E081 /* TrackerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1148622A1450A1830081E081 /* TrackerUtil.m */; };
+		115E8EC7145214EC004DFA1D /* CommerceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 115E8EC4145214EC004DFA1D /* CommerceViewController.m */; };
+		115E8EC8145214EC004DFA1D /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 115E8EC6145214EC004DFA1D /* EventViewController.m */; };
+		115E8ECB145214FA004DFA1D /* CommerceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 115E8EC9145214FA004DFA1D /* CommerceView.xib */; };
+		115E8ECC145214FA004DFA1D /* EventView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 115E8ECA145214FA004DFA1D /* EventView.xib */; };
+		117368331485617D0098A4CB /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 117368321485617D0098A4CB /* libGoogleAnalytics.a */; };
+		1176BD1C144779540085FD6A /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1176BD1B144779540085FD6A /* SettingsViewController.m */; };
+		11C18622144792D6003EB57A /* PageViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C18621144792D6003EB57A /* PageViewViewController.m */; };
+		1D3623260D0F684500981E51 /* MobilePlaygroundAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* MobilePlaygroundAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		282CCBFE0DB6C98000C4EA27 /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 282CCBFD0DB6C98000C4EA27 /* SettingsView.xib */; };
+		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
+		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		110B50FD1458D38A0038033B /* CustomVariablesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomVariablesViewController.h; sourceTree = "<group>"; };
+		110B50FE1458D38A0038033B /* CustomVariablesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomVariablesViewController.m; sourceTree = "<group>"; };
+		110B51091458D4040038033B /* CustomVariablesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomVariablesView.xib; sourceTree = "<group>"; };
+		1117903C14464C780016DBDD /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		1117904114464C8D0016DBDD /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		1140B8A01448D5DC000CCD6C /* PageViewView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageViewView.xib; sourceTree = "<group>"; };
+		1140B8A51448D74F000CCD6C /* UIUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIUtil.h; sourceTree = "<group>"; };
+		1140B8A61448D74F000CCD6C /* UIUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIUtil.m; sourceTree = "<group>"; };
+		114862291450A1830081E081 /* TrackerUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackerUtil.h; sourceTree = "<group>"; };
+		1148622A1450A1830081E081 /* TrackerUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackerUtil.m; sourceTree = "<group>"; };
+		115E8EC3145214EC004DFA1D /* CommerceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommerceViewController.h; sourceTree = "<group>"; };
+		115E8EC4145214EC004DFA1D /* CommerceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommerceViewController.m; sourceTree = "<group>"; };
+		115E8EC5145214EC004DFA1D /* EventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventViewController.h; sourceTree = "<group>"; };
+		115E8EC6145214EC004DFA1D /* EventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewController.m; sourceTree = "<group>"; };
+		115E8EC9145214FA004DFA1D /* CommerceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommerceView.xib; sourceTree = "<group>"; };
+		115E8ECA145214FA004DFA1D /* EventView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventView.xib; sourceTree = "<group>"; };
+		117368311485617D0098A4CB /* GANTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GANTracker.h; sourceTree = "<group>"; };
+		117368321485617D0098A4CB /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics.a; sourceTree = "<group>"; };
+		1176BD1A144779540085FD6A /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		1176BD1B144779540085FD6A /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		11C18620144792D6003EB57A /* PageViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewViewController.h; sourceTree = "<group>"; };
+		11C18621144792D6003EB57A /* PageViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewViewController.m; sourceTree = "<group>"; };
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* MobilePlaygroundAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobilePlaygroundAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* MobilePlaygroundAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MobilePlaygroundAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* Analytics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Analytics.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		282CCBFD0DB6C98000C4EA27 /* SettingsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
+		288765070DF74369002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		28A0AB4B0D9B1048005BE974 /* MobilePlayground_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobilePlayground_Prefix.pch; sourceTree = "<group>"; };
+		28AD73870D9D96C1002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* MobilePlayground-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MobilePlayground-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */,
+				1117903D14464C780016DBDD /* libsqlite3.0.dylib in Frameworks */,
+				1117904214464C8D0016DBDD /* CFNetwork.framework in Frameworks */,
+				117368331485617D0098A4CB /* libGoogleAnalytics.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				110B50FD1458D38A0038033B /* CustomVariablesViewController.h */,
+				110B50FE1458D38A0038033B /* CustomVariablesViewController.m */,
+				115E8EC3145214EC004DFA1D /* CommerceViewController.h */,
+				115E8EC4145214EC004DFA1D /* CommerceViewController.m */,
+				115E8EC5145214EC004DFA1D /* EventViewController.h */,
+				115E8EC6145214EC004DFA1D /* EventViewController.m */,
+				1D3623240D0F684500981E51 /* MobilePlaygroundAppDelegate.h */,
+				1D3623250D0F684500981E51 /* MobilePlaygroundAppDelegate.m */,
+				11C18620144792D6003EB57A /* PageViewViewController.h */,
+				11C18621144792D6003EB57A /* PageViewViewController.m */,
+				1176BD1A144779540085FD6A /* SettingsViewController.h */,
+				1176BD1B144779540085FD6A /* SettingsViewController.m */,
+				114862291450A1830081E081 /* TrackerUtil.h */,
+				1148622A1450A1830081E081 /* TrackerUtil.m */,
+				1140B8A51448D74F000CCD6C /* UIUtil.h */,
+				1140B8A61448D74F000CCD6C /* UIUtil.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		11179008144648A60016DBDD /* Google Analytics Library */ = {
+			isa = PBXGroup;
+			children = (
+				117368311485617D0098A4CB /* GANTracker.h */,
+				117368321485617D0098A4CB /* libGoogleAnalytics.a */,
+			);
+			name = "Google Analytics Library";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* Analytics.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* MobilePlayground */ = {
+			isa = PBXGroup;
+			children = (
+				11179008144648A60016DBDD /* Google Analytics Library */,
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = MobilePlayground;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				28A0AB4B0D9B1048005BE974 /* MobilePlayground_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				115E8EC9145214FA004DFA1D /* CommerceView.xib */,
+				110B51091458D4040038033B /* CustomVariablesView.xib */,
+				115E8ECA145214FA004DFA1D /* EventView.xib */,
+				28AD73870D9D96C1002E5188 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* MobilePlayground-Info.plist */,
+				1140B8A01448D5DC000CCD6C /* PageViewView.xib */,
+				282CCBFD0DB6C98000C4EA27 /* SettingsView.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				288765070DF74369002DB57D /* CoreGraphics.framework */,
+				1117904114464C8D0016DBDD /* CFNetwork.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				1117903C14464C780016DBDD /* libsqlite3.0.dylib */,
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* MobilePlayground */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "MobilePlayground" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MobilePlayground;
+			productName = MobilePlayground;
+			productReference = 1D6058910D05DD3D006BFB54 /* Analytics.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "MobilePlayground" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* MobilePlayground */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* MobilePlayground */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */,
+				282CCBFE0DB6C98000C4EA27 /* SettingsView.xib in Resources */,
+				1140B8A11448D5DC000CCD6C /* PageViewView.xib in Resources */,
+				115E8ECB145214FA004DFA1D /* CommerceView.xib in Resources */,
+				115E8ECC145214FA004DFA1D /* EventView.xib in Resources */,
+				110B510A1458D4040038033B /* CustomVariablesView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* MobilePlaygroundAppDelegate.m in Sources */,
+				1176BD1C144779540085FD6A /* SettingsViewController.m in Sources */,
+				11C18622144792D6003EB57A /* PageViewViewController.m in Sources */,
+				1140B8A71448D74F000CCD6C /* UIUtil.m in Sources */,
+				1148622B1450A1830081E081 /* TrackerUtil.m in Sources */,
+				115E8EC7145214EC004DFA1D /* CommerceViewController.m in Sources */,
+				115E8EC8145214EC004DFA1D /* EventViewController.m in Sources */,
+				110B51001458D38A0038033B /* CustomVariablesViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MobilePlayground_Prefix.pch;
+				INFOPLIST_FILE = "MobilePlayground-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				PRODUCT_NAME = Analytics;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MobilePlayground_Prefix.pch;
+				INFOPLIST_FILE = "MobilePlayground-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				PRODUCT_NAME = Analytics;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PREBINDING = NO;
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "MobilePlayground" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "MobilePlayground" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

@@ -1,0 +1,128 @@
+<?xml version="1.0" ?>
+<!-- Copyright 2011 Google Inc. All Rights Reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License. -->
+
+<project name="EasyTracker" basedir=".">
+
+ <property environment="env"/>
+ <echo>Using Android SDK at ${env.ANDROID_HOME}, set ANDROID_HOME environment variable to your SDK's location. This build requires SDK 1.5 or later.</echo>
+ <echo>Using the Google Analytics SDK jar file at ${env.GOOGLE_ANALYTICS}, set
+   GOOGLE_ANALYTICS environment variable to the directory containing the file libGoogleAnalytics.jar.</echo>
+  <property name="sdk-dir" value="${env.ANDROID_HOME}"/>
+  <property name="googleanalytics-dir" value="${env.GOOGLE_ANALYTICS}"/>
+  <property name="platform-dir" value="${sdk-dir}/platforms/android-3"/>
+  <property name="android-tools-dir" value="${sdk-dir}/tools"/>
+  <property name="platform-tools-dir" value="${platform-dir}/tools"/>
+  <property name="android-jar" value="${platform-dir}/android.jar"/>
+  <property name="googleanalytics-jar"
+    value="${googleanalytics-dir}/libGoogleAnalytics.jar"/>
+
+  <!-- Input directory -->
+  <property name="src-dir"
+    value="src/com/google/android/apps/analytics/easytracking"/>
+
+  <!-- Output directories -->
+  <property name="bin-dir" value="release-bin"/>
+  <property name="gen-dir" value="release-gen"/>
+  <property name="docs-dir" value="docs"/>
+
+  <property name="src-jar-name" value="EasyTracker-src.jar"/>
+  <property name="jar-name" value="EasyTracker.jar"/>
+  <property name="zip-name" value="EasyTracker.zip"/>
+  <property name="zip-src-name" value="EasyTrackerSrc.zip"/>
+
+  <target name="release" depends="zipsource">
+  </target>
+
+  <!-- Remove the output directories if they exist. -->
+  <target name="clean">
+      <echo>Removing the output directories if needed...</echo>
+      <delete dir="${bin-dir}"/>
+      <delete dir="${gen-dir}"/>
+      <delete dir="${docs-dir}"/>
+  </target>
+
+  <!-- Create input and output directories if they don't exist yet. -->
+  <target name="dirs">
+      <echo>Creating output directories if needed...</echo>
+      <mkdir dir="${bin-dir}"/>
+      <mkdir dir="${gen-dir}"/>
+      <mkdir dir="${docs-dir}"/>
+  </target>
+
+  <!-- Compile this project's .java files into .class files. -->
+  <target name="compile" depends="dirs">
+    <javac encoding="ascii" target="1.5" debug="false" extdirs=""
+            includeantruntime="false"
+            srcdir="${src-dir}"
+            destdir="${bin-dir}">
+      <include name="*.java"/>
+        <bootclasspath>
+            <fileset file="${android-jar}"/>
+            <fileset file="${googleanalytics-jar}"/>
+        </bootclasspath>
+    </javac>
+  </target>
+
+  <!-- Create javadocs. -->
+  <target name="javadoc" depends="dirs">
+    <javadoc sourcepath="src"
+             verbose="on"
+             use="true"
+             destdir="${docs-dir}"
+             classpath="${googleanalytics-jar}:${android-jar}"
+             linkoffline="http://d.android.com/reference ${sdk-dir}/docs/reference"
+             stylesheetfile="${sdk-dir}/docs/assets/android-developer-docs.css"
+             windowtitle="EasyTracker API"
+             doctitle="&lt;hl&gt;EasyTracker&lt;/hl&gt;"
+    />
+  </target>
+
+  <target name="makejar" depends="compile">
+    <jar destfile="${gen-dir}/${jar-name}" basedir="${bin-dir}">
+      <manifest>
+        <attribute name="Implementation-Title" value="EasyTracker Analytics Library"/>
+        <attribute name="Implementation-Vendor" value="Google Inc." />
+      </manifest>
+    </jar>
+  </target>
+
+  <target name="zipjar" depends="makejar,javadoc">
+    <zip destfile="${zip-name}">
+      <fileset dir="." includes="COPYING"/>
+      <fileset dir="." includes="ReadMe.txt"/>
+      <fileset dir="release-gen" includes="${jar-name}"/>
+      <fileset dir="." includes="${docs-dir}/"/>
+    </zip>
+  </target>
+
+  <!-- depend on makesrc target so we ensure that the source jar file is built
+       as part of the release process.-->
+  <target name="zipsource" depends="zipjar">
+    <zip destfile="${zip-src-name}">
+      <fileset dir="." includes="**">
+        <exclude name="EasyTracker.zip"/>
+        <exclude name="EasyTrackerSrc.zip"/>
+        <exclude name="**/bin"/>
+        <exclude name="**/bin/**"/>
+        <exclude name="**/gen"/>
+        <exclude name="**/gen/**"/>
+        <exclude name="**/release-gen"/>
+        <exclude name="**/release-gen/**"/>
+        <exclude name="**/release-bin"/>
+        <exclude name="**/release-bin/**"/>
+      </fileset>
+    </zip>
+  </target>
+</project>
