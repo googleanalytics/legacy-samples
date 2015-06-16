@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" 
+				layout="absolute" width="435" height="500"
+				creationComplete="init();">
+	<mx:Script>
+		<![CDATA[
+			import com.google.analytics.GATracker;
+			import flash.external.ExternalInterface;
+			
+			public var track:GATracker;
+			
+			public function init():void {
+				track = new GATracker("UA-5-1");
+				track.setAllowLinker(true);
+				track.initData();
+				
+				var accnt:String = acctID.text = track.getAccount();
+				clientInfo.text = track.getClientInfo(true).toString();
+				detectFlash.text = track.getDetectFlash(true).toString(); 
+				detectTitle.text = track.getDetectTitle(true).toString();
+				localGif.text = track.getLocalGifPath();		
+				serviceMode.text = track.getServiceMode().toString();
+				version.text = track.getVersion();
+				cookie.text = track.getLinkerUrl("www.test.com");
+
+				//execute JS test on tracking obj
+				ExternalInterface.call("_test", accnt);
+			} 
+			
+			private function trackPageview():void {
+				track.trackPageview(pDat.text);
+			}
+			private function trackEvt():void {
+				track.trackEvent(eObj.text, eAct.text, eLab.text, Number(eVal.text));
+			}
+		]]>
+	</mx:Script>
+	<mx:VBox horizontalAlign="center" width="100%">
+		<mx:Form height="100%">
+			<mx:FormItem label="Account ID = ">
+				<mx:Label id="acctID" />
+			</mx:FormItem>
+			<mx:FormItem label="Get Client Info = ">
+				<mx:Label id="clientInfo" />
+			</mx:FormItem>
+			<mx:FormItem label="Get Detect Flash = ">
+				<mx:Label id="detectFlash" />
+			</mx:FormItem>
+			<mx:FormItem label="Get Detect Title = ">
+				<mx:Label id="detectTitle" />
+			</mx:FormItem>
+			<mx:FormItem label="Local Gif Path = ">
+				<mx:Label id="localGif" />
+			</mx:FormItem>
+			<mx:FormItem label="Get Service Mode = ">
+				<mx:Label id="serviceMode" />
+			</mx:FormItem>
+			<mx:FormItem label="Get Version = ">
+				<mx:Label id="version" />
+			</mx:FormItem>
+			<mx:FormItem label="Get Linker Data = ">
+				<mx:Label id="cookie" />
+			</mx:FormItem>
+		</mx:Form>		
+		
+		<mx:HRule width="100%" height="1" />
+		<mx:Label text="Optional Pageview Paramater" fontWeight="bold"/>
+		<mx:HBox width="100%">
+			<mx:TextInput id="pDat"  width="270"/>
+			<mx:Button label="Track Pageview" click="trackPageview()"/>
+		</mx:HBox>
+		
+		<mx:HRule width="100%" height="1" />
+		<mx:Label text="Event Tracking" fontWeight="bold"/>
+		<mx:HBox width="100%">
+			<mx:Form>
+				<mx:FormItem label="Object">
+					<mx:TextInput id="eObj" />
+				</mx:FormItem>
+				<mx:FormItem label="Action">
+					<mx:TextInput id="eAct" />
+				</mx:FormItem>
+				<mx:FormItem label="Label">
+					<mx:TextInput id="eLab" />
+				</mx:FormItem>
+				<mx:FormItem label="Value">
+					<mx:TextInput id="eVal" />
+				</mx:FormItem>
+			</mx:Form>
+			<mx:Button label="Track Event" click="trackEvt()" />
+		</mx:HBox>
+	</mx:VBox>
+	
+</mx:Application>

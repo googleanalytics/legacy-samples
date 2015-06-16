@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="vertical" width="795" height="514"  creationComplete="init();" >
+	
+	<mx:Script>
+		<![CDATA[
+			
+			import GoogleAnalytics.GAjsAS3;
+			
+			[Bindable]	
+			public var track:GAjsAS3;
+			
+			public function init():void {
+				track = GAjsAS3._getTracker("UA-5-1");
+				track._initData();
+				acctID.text = track._getAccount();
+				clientInfo.text = track._getClientInfo().toString();
+				detectFlash.text = track._getDetectFlash().toString(); 
+				detectTitle.text = track._getDetectTitle().toString();
+				localGif.text = track._getLocalGifPath();		
+				serviceMode.text = track._getServiceMode().toString();
+				version.text = track._getVersion();
+				cookie.text = track._getLink("www.test.com");
+	//			track._trackEvent("test", "rocks");
+			}
+			
+		]]>
+	</mx:Script>
+	<mx:HBox height="100%" width="100%">
+		<mx:VBox height="100%" width="100%">
+			<mx:Form width="401" height="100%">
+				<mx:FormItem label="Account ID = " width="100%">
+					<mx:Label id="acctID" />
+				</mx:FormItem>
+				<mx:FormItem label="Get Client Info = " width="100%">
+					<mx:Label id="clientInfo" />
+				</mx:FormItem>
+				<mx:FormItem label="Get Detect Flash = " width="100%">
+					<mx:Label id="detectFlash" />
+				</mx:FormItem>
+				<mx:FormItem label="Get Detect Title = " width="100%">
+					<mx:Label id="detectTitle" />
+				</mx:FormItem>
+				<mx:FormItem label="Local Gif Path = " width="100%">
+					<mx:Label id="localGif" />
+				</mx:FormItem>
+				<mx:FormItem label="Get Service Mode = " width="100%">
+					<mx:Label id="serviceMode" />
+				</mx:FormItem>
+				<mx:FormItem label="Get Version = " width="100%">
+					<mx:Label id="version" />
+				</mx:FormItem>
+				<mx:FormItem label="Get Cookie Data = " width="100%">
+					<mx:TextInput id="cookie"  editable="false" width="100%"/>
+				</mx:FormItem>
+				
+			</mx:Form>
+			<mx:HRule width="100%" height="1"/>
+			<mx:Label text="Optional Tracking Parameter" fontWeight="bold"/>
+			<mx:HBox width="100%">
+				<mx:TextInput width="100%" id="PVparam"/>
+				<mx:Button label="Track Pageview" id="PVbutt" click="track._trackPageview(PVparam.text);" />
+			</mx:HBox>
+			<mx:HRule width="100%" height="1"/>
+			<mx:Label text="Event Tracking Parameters" fontWeight="bold"/>
+			<mx:HBox width="100%">	
+				<mx:Form width="100%" height="143">
+					<mx:FormItem label="Object">
+						<mx:TextInput id="evtObject" />
+					</mx:FormItem>
+					<mx:FormItem label="Action">
+						<mx:TextInput id="evtAction" />
+					</mx:FormItem>
+					<mx:FormItem label="Label">
+						<mx:TextInput id="evtLabel" />
+					</mx:FormItem>	
+					<mx:FormItem label="Value">
+						<mx:TextInput id="evtValue" />
+					</mx:FormItem>	
+				</mx:Form>
+				<mx:Button label="Track Event" id="EVTbutt" click="track._trackEvent(evtObject.text, evtAction.text, evtLabel.text, evtValue.text as Number);"  width="114"/>
+			</mx:HBox>
+			
+		</mx:VBox>
+		<mx:Spacer width="25"/>
+		<mx:VBox height="100%" width="297">
+			<mx:Label text="Functions Called In Container"/>
+			<mx:TextArea width="289" height="100%" id="out" wordWrap="true" text="{track.history}" editable="false"/>
+		</mx:VBox>
+	</mx:HBox>
+	
+	
+	
+</mx:Application>

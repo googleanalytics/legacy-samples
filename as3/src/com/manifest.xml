@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<componentPackage>
+	
+	<component id="GATracker" 
+    	class="com.google.analytics.GATracker" />
+    
+    <component id="GAJS"
+    	class="com.google.analytics.core.GAJS" />
+    	
+    <component id="IGA"
+    	class="com.google.analytics.core.IGA" />
+    	
+    <component id="GAEvent"
+    	class="com.google.analytics.events.GAEvent" />
+    	
+    <component id="TransactionVO"
+    	class="com.google.analytics.vo.TransactionVO" />
+
+</componentPackage>

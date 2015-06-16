@@ -1,0 +1,54 @@
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<title>GA.JS - AS3 Bridge Test</title>
+
+</head>
+
+<body>
+
+	<script src="http://www.google-analytics.com/ga.js"></script>
+	<script>
+		var _GAtrack = {}; 	function _createGAObj(id) { window._GAtrack[id] = _gat._getTracker(id); }
+	</script>
+
+  	<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+			id="${application}" width="${width}" height="${height}"
+			codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab">
+			<param name="movie" value="${swf}.swf" />
+			<param name="quality" value="high" />
+			<param name="bgcolor" value="${bgcolor}" />
+			<param name="allowScriptAccess" value="sameDomain" />
+			<embed src="${swf}.swf" quality="high" bgcolor="${bgcolor}"
+				width="${width}" height="${height}" name="${application}" align="middle"
+				play="true"
+				loop="false"
+				quality="high"
+				allowScriptAccess="sameDomain"
+				type="application/x-shockwave-flash"
+				pluginspage="http://www.adobe.com/go/getflashplayer">
+			</embed>
+	</object>
+	
+	
+	<br><br><div id="out"></div>
+	<script>
+	
+		function _test(id) {
+			var v = window._GAtrack[id];
+			var o = document.getElementById('out');
+			o.innerHTML = 
+				"<p> Account ID = "+ v._getAccount() +"</p>"+
+				"<p> getClientInfo = "+ v._getClientInfo() +"</p>"+
+				"<p> getDetectFlash = "+ v._getDetectFlash() +"</p>"+
+				"<p> getDetectTitle = "+ v._getDetectTitle() +"</p>"+	
+				"<p> Local Gif Path = "+ v._getLocalGifPath() +"</p>"+
+				"<p> getServiceMode = "+ v._getServiceMode() +"</p>"+
+				"<p> getVersion = "+ v._getVersion() +"</p>"+
+				"<p> getLinkerUrl = "+ v._getLinkerUrl('www.trial.com') +"</p>";
+		}
+	
+	</script>
+	
+</body>
+</html>
