@@ -57,7 +57,8 @@ To reference `_GAtrack` from within a JS function, you can pre-pend `window.` su
 ### 2. The !ActionScript class itself
 
 #### Differences
-For the most part, this class adheres to GA.JS v4 tracking API outlined here: http://code.google.com/apis/analytics/docs/gaJSApi.html
+For the most part, this class adheres to GA.JS v4 tracking API outlined here:
+https://developers.google.com/analytics/devguides/collection/gajs/methods/?csw=1
 
 Although there are a couple of differences.
 
