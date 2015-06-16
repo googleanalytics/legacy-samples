@@ -4,7 +4,7 @@ This repository is a collection of
 Google Analtyics samples migrated from [Google Code](https://code.google.com).
 
 #### Legacy API Samples
-The (analytics-api-samples)[./actionscript3-event-tracking] is
+The [analytics-api-samples](./actionscript3-event-tracking) is
 a copy of legacy API samples from [Google Code](https://code.google.com/p/analytics-api-samples/).
 
 #### For the Google Analytics platform
