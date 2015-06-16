@@ -35,8 +35,7 @@ This snippet of JS code needs to be added *before* the Flash/Flex SWF file is em
 
 ####So what does this do?
   * It creates a global variable `_GAtrack` which will hold GA tracking objects
-
-  To track a page view in !JavaScript using this methodology you would use :
+    To track a page view in !JavaScript using this methodology you would use :
 
     var id = "UA-5-1";
     _createGAObj(id);

@@ -1,6 +1,6 @@
 #summary Installation Documentation
 
-## GA.JS AS3 Bridge Install Guide=
+## GA.JS AS3 Bridge Install Guide
 
 First read the usage guide GaAs3Bridge to understand how both parts of the bridge work
 Depending on the your developing environment, there are couple of ways to install the bridge :
